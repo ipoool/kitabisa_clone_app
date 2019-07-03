@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kitabisa_clone_app/Components/box_timeline.dart';
 import 'package:kitabisa_clone_app/Components/slider.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:kitabisa_clone_app/Components/box_dompet.dart';
 
 class Home extends StatelessWidget {
   List<Map> listTimeline = [
@@ -54,6 +54,7 @@ class Home extends StatelessWidget {
       backgroundColor: Color(0xFFf2f3f4),
       appBar: AppBar(
         backgroundColor: Color(0xFF00aeef),
+        elevation: 0,
         title: ClipRRect(
             borderRadius: BorderRadius.circular(20.0),
             child: Container(
@@ -75,7 +76,7 @@ class Home extends StatelessWidget {
             "https://assets.kitabisa.com/images/logo-icon-small.png"),
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.dehaze),
+            icon: Icon(Icons.favorite_border),
             onPressed: () {},
           )
         ],
@@ -84,54 +85,67 @@ class Home extends StatelessWidget {
         children: <Widget>[
           Container(
             color: Colors.white,
-            padding: EdgeInsets.only(
-                top: 40.0, left: 16.0, right: 16.0, bottom: 20.0),
-            child: Text(
-              "Setiap Hari, Ribuan Orang Galang Dana Untuk Hal yang Mereka Perjuangkan di Kitabisa",
-              style: TextStyle(fontSize: 21.0, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.left,
-            ),
-          ),
-          Container(
-            color: Colors.white,
-            padding: EdgeInsets.symmetric(horizontal: 16.0),
-            child: RaisedButton(
-              padding: EdgeInsets.symmetric(vertical: 10.0),
-              color: Color(0xFFda636b),
-              onPressed: () {},
-              child: Text("Galang Dana", style: TextStyle(color: Colors.white)),
-            ),
-          ),
-          Container(
-              color: Colors.white,
-              padding: EdgeInsets.only(left: 16.0, right: 16.0, bottom: 24.0),
-              child: RaisedButton(
-                color: Color(0xFF25d366),
-                padding: EdgeInsets.symmetric(vertical: 10.0),
-                onPressed: () {},
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    SvgPicture.asset(
-                      "images/whatsapp.svg",
-                      width: 20.0,
-                    ),
-                    SizedBox(width: 5.0),
-                    Text(
-                      "Tanya Galang Dana Media",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ],
+            child: Stack(
+              children: <Widget>[
+                Container(
+                  color: Color(0xFF00aeef),
+                  height: 40.0,
+                  width: double.infinity,
                 ),
-              )),
-          Container(
-            color: Colors.white,
-            padding: EdgeInsets.only(left: 16.0, right: 16.0, bottom: 18.0),
-            child: Text("Sebarkan Kebaikan Setiap Hari",
-                style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
+                BoxDompet(),
+              ],
+            ),
           ),
+          // Container(
+          //   color: Colors.white,
+          //   padding: EdgeInsets.only(
+          //       top: 40.0, left: 16.0, right: 16.0, bottom: 20.0),
+          //   child: Text(
+          //     "Setiap Hari, Ribuan Orang Galang Dana Untuk Hal yang Mereka Perjuangkan di Kitabisa",
+          //     style: TextStyle(fontSize: 21.0, fontWeight: FontWeight.bold),
+          //     textAlign: TextAlign.left,
+          //   ),
+          // ),
+          // Container(
+          //   color: Colors.white,
+          //   padding: EdgeInsets.symmetric(horizontal: 16.0),
+          //   child: RaisedButton(
+          //     padding: EdgeInsets.symmetric(vertical: 10.0),
+          //     color: Color(0xFFda636b),
+          //     onPressed: () {},
+          //     child: Text("Galang Dana", style: TextStyle(color: Colors.white)),
+          //   ),
+          // ),
+          // Container(
+          //     color: Colors.white,
+          //     padding: EdgeInsets.only(left: 16.0, right: 16.0, bottom: 24.0),
+          //     child: RaisedButton(
+          //       color: Color(0xFF25d366),
+          //       padding: EdgeInsets.symmetric(vertical: 10.0),
+          //       onPressed: () {},
+          //       child: Row(
+          //         mainAxisAlignment: MainAxisAlignment.center,
+          //         children: <Widget>[
+          //           SvgPicture.asset(
+          //             "images/whatsapp.svg",
+          //             width: 20.0,
+          //           ),
+          //           SizedBox(width: 5.0),
+          //           Text(
+          //             "Tanya Galang Dana Media",
+          //             style: TextStyle(color: Colors.white),
+          //           ),
+          //         ],
+          //       ),
+          //     )),
+          // Container(
+          //   color: Colors.white,
+          //   padding: EdgeInsets.only(left: 16.0, right: 16.0, bottom: 18.0),
+          //   child: Text("Sebarkan Kebaikan Setiap Hari",
+          //       style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold)),
+          // ),
           Container(
-            // padding: EdgeInsets.only(bottom: 18.0),
+            padding: EdgeInsets.only(top: 13.0),
             color: Colors.white,
             child: SliderBox(),
           ),
